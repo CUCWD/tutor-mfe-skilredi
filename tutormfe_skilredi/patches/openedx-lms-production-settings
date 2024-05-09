@@ -1,0 +1,5 @@
+
+# SkilRedi
+LOGIN_REDIRECT_WHITELIST.append("{{ SKILREDI_MFE_HOST }}")
+CORS_ORIGIN_WHITELIST.append("{% if ENABLE_HTTPS %}https://{% else %}http://{% endif %}{{ SKILREDI_MFE_HOST }}")
+CSRF_TRUSTED_ORIGINS.append("{{ SKILREDI_MFE_HOST }}")

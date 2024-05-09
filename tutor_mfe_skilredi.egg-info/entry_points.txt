@@ -1,0 +1,3 @@
+[tutor.plugin.v1]
+mfe-skilredi = tutormfe_skilredi.plugin
+

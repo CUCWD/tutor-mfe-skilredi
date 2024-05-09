@@ -1,0 +1,12 @@
+MANIFEST.in
+README.rst
+setup.py
+tutor_mfe_skilredi.egg-info/PKG-INFO
+tutor_mfe_skilredi.egg-info/SOURCES.txt
+tutor_mfe_skilredi.egg-info/dependency_links.txt
+tutor_mfe_skilredi.egg-info/entry_points.txt
+tutor_mfe_skilredi.egg-info/requires.txt
+tutor_mfe_skilredi.egg-info/top_level.txt
+tutormfe_skilredi/__about__.py
+tutormfe_skilredi/__init__.py
+tutormfe_skilredi/plugin.py

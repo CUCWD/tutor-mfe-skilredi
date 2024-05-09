@@ -1,0 +1,7 @@
+
+# MFE SkilRedi
+mfe-skilredi:
+    image: {{ MFE_SKILREDI_DOCKER_IMAGE }}
+    build:
+        context: ../plugins/mfe-skilredi/build/mfe/
+    restart: unless-stopped
