@@ -13,6 +13,14 @@ config = {
         "HOST": "{{ SKILREDI_MFE_HOST }}",
         "COMMON_VERSION": "{{ OPENEDX_COMMON_VERSION }}",
         "CADDY_DOCKER_IMAGE": "{{ DOCKER_IMAGE_CADDY }}",
+        # S3 MFE Staticfiles
+        # ----------------------
+        # The bucket name to use for S3 static files
+        "STATIC_FILES_BUCKET_NAME": "SET_ME_PLEASE",
+        # AWS S3 settings
+        "AWS_STATIC_FILES_ACCESS_KEY_ID": "SET_ME_PLEASE",
+        "AWS_STATIC_FILES_SECRET_KEY": "SET_ME_PLEASE",
+        "DEPLOY_S3": False,
         "ACCOUNT_MFE_APP_SKILREDI": {
             "name": "account",
             "repository": "https://github.com/edx/frontend-app-account",
@@ -57,7 +65,7 @@ tutor_hooks.Filters.IMAGES_BUILD.add_item(
     (
         "mfe-skilredi",
         ("plugins", "mfe-skilredi", "build", "mfe"),
-        "{{ MFE_SKILREDI_DOCKER_IMAGE }}",
+        "{{ MFE_DOCKER_IMAGE_SKILREDI }}",
         (),
     )
 )
@@ -126,9 +134,9 @@ for path in glob(
 
 # Add configuration entries
 tutor_hooks.Filters.CONFIG_DEFAULTS.add_items(
-    [(f"MFE_{key}", value) for key, value in config.get("defaults", {}).items()]
+    [(f"MFE_{key}_SKILREDI", value) for key, value in config.get("defaults", {}).items()]
 )
 tutor_hooks.Filters.CONFIG_UNIQUE.add_items(
-    [(f"MFE_{key}", value) for key, value in config.get("unique", {}).items()]
+    [(f"MFE_{key}_SKILREDI", value) for key, value in config.get("unique", {}).items()]
 )
 tutor_hooks.Filters.CONFIG_OVERRIDES.add_items(list(config.get("overrides", {}).items()))
